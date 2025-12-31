@@ -18,26 +18,20 @@
             min-height: 100vh;
             position: relative;
             overflow-x: hidden;
+            /* Background video now scrolls with content */
+            background: url('background-video.mp4') center center / cover no-repeat;
+            background-attachment: scroll; /* Explicitly scroll on mobile */
         }
-        /* Background Video - MAX Visibility */
-        #bg-video {
-            position: fixed;
-            right: 0;
-            bottom: 0;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            z-index: -1;
-            object-fit: cover;
-            opacity: 0.85; /* Cranked to 0.85 – super visible but text still pops */
+        /* Fallback for browsers that don't support video background */
+        video#bg-video {
+            display: none; /* Hide the old fixed video */
         }
         header {
-            background-color: rgba(17, 17, 17, 0.7); /* More transparent to let video shine */
+            background-color: rgba(17, 17, 17, 0.8);
             padding: 40px 20px;
             width: 100%;
             box-sizing: border-box;
-            backdrop-filter: blur(12px); /* Heavy blur for readability */
+            backdrop-filter: blur(10px);
         }
         .logo {
             width: 180px;
@@ -45,13 +39,12 @@
             margin-bottom: 20px;
             border-radius: 50%;
             border: 8px solid #f00;
-            box-shadow: 0 0 70px #f00; /* Intense glow */
-            background-color: rgba(0, 0, 0, 0.5); /* Dark tint if needed */
+            box-shadow: 0 0 70px #f00;
         }
         h1 {
             font-size: 4em;
             margin: 10px 0;
-            text-shadow: 0 0 40px #f00, 0 0 20px #000; /* Black inner shadow for contrast */
+            text-shadow: 0 0 40px #f00, 0 0 20px #000;
         }
         .tagline {
             font-size: 2.5em;
@@ -66,7 +59,7 @@
             100% { transform: scale(1); }
         }
         .meme-coin-banner {
-            background-color: rgba(255, 0, 0, 0.9);
+            background-color: rgba(255, 0, 0, 0.95);
             color: #fff;
             padding: 20px;
             font-size: 3em;
@@ -74,16 +67,16 @@
             text-shadow: 6px 6px #000;
             width: 100%;
         }
-        .suspect {
+        .suspect, .arrest {
             margin: 50px auto;
             max-width: 90%;
             width: 100%;
             box-sizing: border-box;
-            background-color: rgba(0, 0, 0, 0.5); /* Lighter overlay */
+            background-color: rgba(0, 0, 0, 0.6);
             padding: 20px;
             border-radius: 20px;
         }
-        .suspect img {
+        .suspect img, .arrest img {
             width: 100%;
             height: auto;
             border: 12px solid #f00;
@@ -97,12 +90,12 @@
             width: 100%;
             box-sizing: border-box;
             line-height: 1.6;
-            background-color: rgba(17, 17, 17, 0.7); /* More transparent */
+            background-color: rgba(17, 17, 17, 0.7);
             padding: 30px;
             border-radius: 15px;
             backdrop-filter: blur(12px);
             border: 4px solid #f00;
-            text-shadow: 2px 2px 4px #000; /* Shadow on all text for pop */
+            text-shadow: 2px 2px 4px #000;
         }
         .wanted {
             font-size: 2.5em;
@@ -156,10 +149,8 @@
     </style>
 </head>
 <body>
-    <video autoplay muted loop playsinline id="bg-video">
-        <source src="Sketch-run.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+    <!-- Removed fixed video tag - now using CSS background for scrolling effect -->
+    <!-- If you want a subtle static video feel on desktop, we can add JS later -->
 
     <header>
         <img src="Sketch coin.JPG" alt="SketchCoin Logo" class="logo">
@@ -173,10 +164,12 @@
     </div>
     
     <div class="suspect">
-        <img src="Sketch.jpg" alt="Sketch the Suspect">
+        <img src="Sketch.PNG" alt="Sketch the Suspect">
     </div>
 
-    <!-- Removed arrest section since file not uploaded yet -->
+    <div class="arrest">
+        <img src="arrest-made.jpg" alt="Arrest Made - The Sketch Worked!">
+    </div>
     
     <div class="description">
         <p><strong>Alias:</strong> Big Forehead Boss, The Thinker, Chrome Dome Criminal</p>
