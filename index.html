@@ -59,6 +59,14 @@
             margin: 20px 0;
             text-shadow: 0 0 30px #f00, 0 0 15px #000;
         }
+        .superior-catchphrase {
+            font-size: 3em;
+            color: #f00;
+            animation: blink 0.8s infinite;
+            margin: 30px 0;
+            text-shadow: 0 0 40px #f00, 0 0 20px #000;
+            font-weight: bold;
+        }
         @keyframes pulse {
             0% { transform: scale(1); }
             50% { transform: scale(1.2); }
@@ -89,7 +97,7 @@
             border-radius: 20px;
             box-shadow: 0 0 70px #f00;
         }
-        .description, .token-info {
+        .description, .backstory, .token-info {
             font-size: 1.6em;
             margin: 40px auto;
             max-width: 90%;
@@ -102,6 +110,12 @@
             backdrop-filter: blur(12px);
             border: 4px solid #f00;
             text-shadow: 2px 2px 4px #000;
+        }
+        .backstory h2 {
+            color: #f00;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px #f00;
         }
         .wanted {
             font-size: 2.5em;
@@ -147,9 +161,10 @@
         @media (max-width: 768px) {
             h1 { font-size: 3em; }
             .tagline { font-size: 2em; }
+            .superior-catchphrase { font-size: 2.2em; }
             .meme-coin-banner { font-size: 2.2em; }
             .logo { width: 140px; height: 140px; }
-            .description, .token-info { font-size: 1.4em; padding: 20px; }
+            .description, .backstory, .token-info { font-size: 1.4em; padding: 20px; }
             .catchphrase { font-size: 1.8em; }
         }
     </style>
@@ -165,13 +180,13 @@
         <h1>WANTED</h1>
         <p class="wanted">SKETCH THE SUSPECT</p>
         <p class="tagline">From Sketch to Mugshot to MOONSHOT</p>
+        <p class="superior-catchphrase">Busted by a Doodle. Mooned by Degens.</p>
     </header>
 
     <div class="meme-coin-banner">
         $SKETCH MEME COIN
     </div>
 
-    <!-- Arrest Made Image (upload as arrest-made.jpg if you want it) -->
     <div class="arrest">
         <img src="arrest-made.jpg" alt="Arrest Made - The Sketch Worked!">
     </div>
@@ -182,10 +197,20 @@
         <p><em>If seen, do not approach. He is already thinking three steps ahead... and holding heavy bags.</em></p>
     </div>
 
+    <!-- New Backstory Section -->
+    <div class="backstory">
+        <h2>The Legendary Backstory</h2>
+        <p>Back in 2018, a thief in Lancaster, PA pulled off a crime... but a witness drew the WORST police sketch ever: a derpy sad face with spiky hair and a massive forehead.</p>
+        <p>Everyone laughed at how bad it was... until the police released it and tips flooded in. The sketch was SO accurate in its badness that it led straight to the suspect's arrest.</p>
+        <p>"ARREST MADE" became the ultimate meme: proof that even a doodle can catch a criminal.</p>
+        <p>Now $SKETCH turns that viral legend into a moonshot: the coin that's sketchy enough to be hilarious... but accurate enough to send.</p>
+        <p>Busted by a Doodle. Mooned by Degens. The story writes itself. 🚔🧠</p>
+    </div>
+
     <div class="token-info">
         <h2>$SKETCH - The Ultimate Meme Coin</h2>
         <p class="catchphrase">$SKETCH: Sketchy? Yes. Mooning? ABSOLUTELY!</p>
-        <p><strong>Catchphrase:</strong> "Busted by a Doodle – Pumped to the Moon!"</p>
+        <p><strong>Catchphrase:</strong> Busted by a Doodle. Mooned by Degens.</p>
         <p><strong>Token Name:</strong> Sketch the Suspect</p>
         <p><strong>Ticker:</strong> $SKETCH</p>
         <p><strong>Chain:</strong> Solana (fast, cheap, based)</p>
