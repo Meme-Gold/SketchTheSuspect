@@ -19,7 +19,7 @@
             position: relative;
             overflow-x: hidden;
         }
-        /* Background Video */
+        /* Background Video - More Noticeable */
         #bg-video {
             position: fixed;
             right: 0;
@@ -30,14 +30,14 @@
             height: auto;
             z-index: -1;
             object-fit: cover;
-            opacity: 0.3; /* Subtle so text stays readable */
+            opacity: 0.6; /* Increased from 0.3 to 0.6 for more visibility */
         }
         header {
-            background-color: rgba(17, 17, 17, 0.8);
+            background-color: rgba(17, 17, 17, 0.85); /* Slightly more opaque */
             padding: 40px 20px;
             width: 100%;
             box-sizing: border-box;
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(8px); /* Stronger blur for contrast */
         }
         .logo {
             width: 180px;
@@ -45,31 +45,32 @@
             margin-bottom: 20px;
             border-radius: 50%;
             border: 6px solid #f00;
-            box-shadow: 0 0 40px #f00;
+            box-shadow: 0 0 50px #f00; /* Stronger glow */
         }
         h1 {
             font-size: 4em;
             margin: 10px 0;
-            text-shadow: 0 0 20px #f00;
+            text-shadow: 0 0 30px #f00; /* Bolder shadow */
         }
         .tagline {
             font-size: 2.5em;
             color: #f00;
-            animation: pulse 2s infinite;
+            animation: pulse 1.5s infinite; /* Faster pulse */
             margin: 20px 0;
+            text-shadow: 0 0 20px #f00;
         }
         @keyframes pulse {
             0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
+            50% { transform: scale(1.15); }
             100% { transform: scale(1); }
         }
         .meme-coin-banner {
-            background-color: rgba(255, 0, 0, 0.9);
+            background-color: rgba(255, 0, 0, 0.95);
             color: #fff;
             padding: 20px;
             font-size: 3em;
             font-weight: bold;
-            text-shadow: 3px 3px #000;
+            text-shadow: 4px 4px #000;
             width: 100%;
         }
         .suspect, .arrest {
@@ -77,16 +78,16 @@
             max-width: 90%;
             width: 100%;
             box-sizing: border-box;
-            background-color: rgba(0, 0, 0, 0.6);
+            background-color: rgba(0, 0, 0, 0.7); /* Darker overlay */
             padding: 20px;
             border-radius: 20px;
         }
         .suspect img, .arrest img {
             width: 100%;
             height: auto;
-            border: 10px solid #f00;
+            border: 12px solid #f00; /* Thicker border */
             border-radius: 20px;
-            box-shadow: 0 0 40px #f00;
+            box-shadow: 0 0 50px #f00; /* Stronger glow */
         }
         .description, .token-info {
             font-size: 1.6em;
@@ -95,32 +96,35 @@
             width: 100%;
             box-sizing: border-box;
             line-height: 1.6;
-            background-color: rgba(17, 17, 17, 0.8);
+            background-color: rgba(17, 17, 17, 0.85);
             padding: 30px;
             border-radius: 15px;
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(8px);
+            border: 2px solid #f00; /* Added red border for pop */
         }
         .wanted {
             font-size: 2.5em;
             color: #f00;
-            animation: blink 1s infinite;
+            animation: blink 0.8s infinite; /* Faster blink */
+            text-shadow: 0 0 20px #f00;
         }
         @keyframes blink {
-            50% { opacity: 0; }
+            50% { opacity: 0.3; }
         }
         .catchphrase {
             font-size: 2em;
             color: #f00;
             animation: blink 1s infinite;
             margin: 30px 0;
+            text-shadow: 0 0 20px #f00;
         }
         footer {
-            background-color: rgba(17, 17, 17, 0.8);
+            background-color: rgba(17, 17, 17, 0.85);
             padding: 20px;
             font-size: 0.9em;
             margin-top: auto;
             width: 100%;
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(8px);
         }
         .social-link {
             color: #fff;
@@ -132,9 +136,11 @@
             display: inline-block;
             margin: 20px 0;
             font-size: 1.5em;
+            box-shadow: 0 0 20px #f00;
         }
         .social-link:hover {
             background-color: #c00;
+            box-shadow: 0 0 30px #f00;
         }
         /* Mobile optimizations */
         @media (max-width: 768px) {
@@ -148,7 +154,7 @@
     </style>
 </head>
 <body>
-    <!-- Background Video -->
+    <!-- Background Video - Now More Noticeable -->
     <video autoplay muted loop playsinline id="bg-video">
         <source src="background-video.mp4" type="video/mp4">
         Your browser does not support the video tag.
