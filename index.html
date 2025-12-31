@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sketch the Suspect - $SKETCH Meme Coin</title>
+    <title>$SKETCH - From Sketch to Mugshot to Moonshot</title>
     <style>
         body {
             background-color: #000;
@@ -12,96 +12,153 @@
             text-align: center;
             margin: 0;
             padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+        /* Background Video */
+        #bg-video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            object-fit: cover;
+            opacity: 0.3; /* Subtle so text stays readable */
         }
         header {
-            background-color: #111;
+            background-color: rgba(17, 17, 17, 0.8);
             padding: 40px 20px;
+            width: 100%;
+            box-sizing: border-box;
+            backdrop-filter: blur(5px);
         }
         .logo {
-            width: 150px;
-            height: 150px;
+            width: 180px;
+            height: 180px;
             margin-bottom: 20px;
             border-radius: 50%;
-            border: 5px solid #f00;
-            box-shadow: 0 0 30px #f00;
+            border: 6px solid #f00;
+            box-shadow: 0 0 40px #f00;
         }
         h1 {
-            font-size: 3.5em;
+            font-size: 4em;
             margin: 10px 0;
-            text-shadow: 0 0 15px #f00;
+            text-shadow: 0 0 20px #f00;
         }
-        .meme-coin-banner {
-            background-color: #ff0000;
-            color: #fff;
-            padding: 15px;
+        .tagline {
             font-size: 2.5em;
-            font-weight: bold;
-            text-shadow: 2px 2px #000;
+            color: #f00;
             animation: pulse 2s infinite;
+            margin: 20px 0;
         }
         @keyframes pulse {
             0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+            50% { transform: scale(1.1); }
             100% { transform: scale(1); }
         }
-        .suspect {
-            margin: 50px auto;
-            max-width: 600px;
-        }
-        .suspect img {
+        .meme-coin-banner {
+            background-color: rgba(255, 0, 0, 0.9);
+            color: #fff;
+            padding: 20px;
+            font-size: 3em;
+            font-weight: bold;
+            text-shadow: 3px 3px #000;
             width: 100%;
-            border: 8px solid #f00;
-            border-radius: 15px;
-            box-shadow: 0 0 30px #f00;
+        }
+        .suspect, .arrest {
+            margin: 50px auto;
+            max-width: 90%;
+            width: 100%;
+            box-sizing: border-box;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 20px;
+        }
+        .suspect img, .arrest img {
+            width: 100%;
+            height: auto;
+            border: 10px solid #f00;
+            border-radius: 20px;
+            box-shadow: 0 0 40px #f00;
         }
         .description, .token-info {
-            font-size: 1.5em;
+            font-size: 1.6em;
             margin: 40px auto;
-            max-width: 800px;
+            max-width: 90%;
+            width: 100%;
+            box-sizing: border-box;
             line-height: 1.6;
-        }
-        .token-info {
-            background-color: #111;
+            background-color: rgba(17, 17, 17, 0.8);
             padding: 30px;
-            border: 3px solid #f00;
-            border-radius: 10px;
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
         }
         .wanted {
-            font-size: 2.2em;
+            font-size: 2.5em;
             color: #f00;
             animation: blink 1s infinite;
         }
         @keyframes blink {
             50% { opacity: 0; }
         }
+        .catchphrase {
+            font-size: 2em;
+            color: #f00;
+            animation: blink 1s infinite;
+            margin: 30px 0;
+        }
         footer {
-            background-color: #111;
+            background-color: rgba(17, 17, 17, 0.8);
             padding: 20px;
             font-size: 0.9em;
-            margin-top: 50px;
+            margin-top: auto;
+            width: 100%;
+            backdrop-filter: blur(5px);
         }
         .social-link {
             color: #fff;
             text-decoration: none;
             font-weight: bold;
-            padding: 10px 20px;
+            padding: 15px 30px;
             background-color: #f00;
-            border-radius: 5px;
+            border-radius: 8px;
             display: inline-block;
-            margin-top: 20px;
+            margin: 20px 0;
+            font-size: 1.5em;
         }
         .social-link:hover {
             background-color: #c00;
         }
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+            h1 { font-size: 3em; }
+            .tagline { font-size: 2em; }
+            .meme-coin-banner { font-size: 2.2em; }
+            .logo { width: 140px; height: 140px; }
+            .description, .token-info { font-size: 1.4em; padding: 20px; }
+            .catchphrase { font-size: 1.8em; }
+        }
     </style>
 </head>
 <body>
+    <!-- Background Video -->
+    <video autoplay muted loop playsinline id="bg-video">
+        <source src="background-video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
     <header>
-        <!-- SketchCoin Logo in Header -->
         <img src="Sketch coin.JPG" alt="SketchCoin Logo" class="logo">
-        
         <h1>WANTED</h1>
         <p class="wanted">SKETCH THE SUSPECT</p>
+        <p class="tagline">From Sketch to Mugshot to MOONSHOT</p>
     </header>
 
     <div class="meme-coin-banner">
@@ -110,6 +167,10 @@
     
     <div class="suspect">
         <img src="Sketch.PNG" alt="Sketch the Suspect">
+    </div>
+
+    <div class="arrest">
+        <img src="arrest-made.jpg" alt="Arrest Made - The Sketch Worked!">
     </div>
     
     <div class="description">
@@ -120,20 +181,23 @@
 
     <div class="token-info">
         <h2>$SKETCH - The Ultimate Meme Coin</h2>
+        <p class="catchphrase">$SKETCH: Sketchy? Yes. Mooning? ABSOLUTELY!</p>
+        <p><strong>Catchphrase:</strong> "Busted by a Doodle – Pumped to the Moon!"</p>
         <p><strong>Token Name:</strong> Sketch the Suspect</p>
         <p><strong>Ticker:</strong> $SKETCH</p>
         <p><strong>Chain:</strong> Solana (fast, cheap, based)</p>
         <p><strong>Supply:</strong> 1,000,000,000 $SKETCH</p>
         <p><strong>Taxes:</strong> 0/0 (no rug, pure community)</p>
         <p><strong>Contract Address:</strong> Coming soon™ (or add your real CA here)</p>
-        <p><strong>Mission:</strong> Send this legendary forehead to the moon while staring down every bear market.</p>
+        <p><strong>Mission:</strong> From the sketch that caught the suspect to the coin that catches 100x. Bears get arrested. Holders get rich.</p>
         <p><strong>Community:</strong> Join the raid. We go up or we go up harder.</p>
-        <a href="https://x.com/suspectsketch?s=21&t=exVumeyJkoGS1Z3lvlUoGw" class="social-link" target="_blank">Follow on X</a>
+        <p style="font-size: 1.8em; color: #f00;">Jeet and you're sketched. Hold and you're golden. 🚔💀</p>
+        <a href="https://x.com/suspectsketch?s=21&t=exVumeyJkoGS1Z3lvlUoGw" class="social-link" target="_blank">RAID ON X</a>
     </div>
     
     <footer>
-        &copy; 2025 Sketch the Suspect - Official Meme Coin Headquarters | Hosted on GitHub Pages<br>
-        Not financial advice. Just vibes and massive forehead energy.
+        &copy; 2025 Sketch the Suspect - From Mugshot to Moonshot | Hosted on GitHub Pages<br>
+        Not financial advice. Just vibes, massive forehead energy, and inevitable gains.
     </footer>
 </body>
 </html>
